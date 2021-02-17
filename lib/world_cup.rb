@@ -13,7 +13,7 @@ class WorldCup
         active << team.players_by_position(position)
       end
     end
-    active
+    active.flatten
   end
 
   def all_players_by_position
