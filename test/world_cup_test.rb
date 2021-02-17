@@ -87,9 +87,10 @@ class WorldCupTest < Minitest::Test
     croatia.add_player(vida)
 
     world_cup = WorldCup.new(2018, [france, croatia])
-    p world_cup.all_players_by_position
+    
+    expected = {"forward"=> [mbappe], "midfielder"=> [pogba, modric], "defender"=> [vida]}
 
-    assert_equal #what here , world_cup.all_players_by_position
+    assert_equal expected, world_cup.all_players_by_position
   end
 
 end

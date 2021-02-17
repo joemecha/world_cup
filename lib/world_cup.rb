@@ -17,11 +17,15 @@ class WorldCup
   end
 
   def all_players_by_position
-    all_pbp = Hash.new
-    @teams.each do |team|
+    all_pbp = Hash.new {|hash, key| hash[key] = []}
+    all_p = []
+    teams.each do |team|
       team.players.each do |player|
-        all_pbp[player.position] = player
+        all_p << player
       end
+    end
+    all_p.each do |player|
+      all_pbp[player.position] << player
     end
     all_pbp
   end
